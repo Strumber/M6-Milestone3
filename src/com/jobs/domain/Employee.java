@@ -22,9 +22,8 @@ public class Employee extends AbsStaffMember {
 	@Override
 	
 		public String toString() {
-			return "Employee [name=" + name + ", address=" + address + ", phone=" + phone + ", total Paid=" + totalPaid + "]" ;
-		//return "Employee [salaryPerMonth=" + salaryPerMonth + ", paymentRate=" + paymentRate + ", name=" + name
-		//		+ ", address=" + address + ", phone=" + phone + ", totalPaid=" + totalPaid + "]";
+			return "Employee [name=" + name + ", address=" + address + ", phone=" + phone + " Salary Month="+ salaryPerMonth + ", total Paid=" + totalPaid + "]" ;
+		
 	}
 
 	//metodo pay
