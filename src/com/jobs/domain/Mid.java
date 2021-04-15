@@ -8,7 +8,8 @@ public class Mid extends Employee {
 	//constructor
 	public Mid(String name, String address, String phone, double salaryPerMonth,IPaymentRate paymentRate) throws Exception {
 		super(name, address, phone, salaryPerMonth, paymentRate);		
-		if(salaryPerMonth<0) throw new Exception();
+		if (salaryPerMonth < 1800 || salaryPerMonth > 2500)
+			throw new Salary_err("El Mid ha de cobrar mes de 1.800 € i menys de 2.500€");
 		if(paymentRate==null) throw new Exception();
 				
 		this.salaryPerMonth=salaryPerMonth;
@@ -23,8 +24,7 @@ public class Mid extends Employee {
 	
 		public String toString() {
 			return "Mid [name=" + name + ", address=" + address + ", phone=" + phone +" Salary Month="+ salaryPerMonth + ", total Paid=" + totalPaid + "]" ;
-		//return "Employee [salaryPerMonth=" + salaryPerMonth + ", paymentRate=" + paymentRate + ", name=" + name
-		//		+ ", address=" + address + ", phone=" + phone + ", totalPaid=" + totalPaid + "]";
+		
 	}
 
 	//metodo pay

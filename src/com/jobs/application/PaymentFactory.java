@@ -56,4 +56,12 @@ public class PaymentFactory {
 			}
 		};
 	}
+	public static IPaymentRate createPaymentRateVolunteer(){
+		return new IPaymentRate() {
+			@Override
+			public double pay(double salaryPerMonth) {
+				return salaryPerMonth;
+			}
+		};
+	}
 }

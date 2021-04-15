@@ -8,7 +8,8 @@ public class Junior extends Employee {
 	//constructor
 	public Junior(String name, String address, String phone, double salaryPerMonth,IPaymentRate paymentRate) throws Exception {
 		super(name, address, phone, salaryPerMonth, paymentRate);		
-		if(salaryPerMonth<0) throw new Exception();
+		if (salaryPerMonth < 900 || salaryPerMonth > 1600)
+			throw new Salary_err("El Junior ha de cobrar mes de 900 € i menys de 1.600€");
 		if(paymentRate==null) throw new Exception();
 				
 		this.salaryPerMonth=salaryPerMonth;
@@ -23,8 +24,7 @@ public class Junior extends Employee {
 	
 		public String toString() {
 			return "Junior [name=" + name + ", address=" + address + ", phone=" + phone +" Salary Month="+ salaryPerMonth + ", total Paid=" + totalPaid + "]" ;
-		//return "Employee [salaryPerMonth=" + salaryPerMonth + ", paymentRate=" + paymentRate + ", name=" + name
-		//		+ ", address=" + address + ", phone=" + phone + ", totalPaid=" + totalPaid + "]";
+		
 	}
 
 	//metodo pay
