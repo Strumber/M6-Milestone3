@@ -1,25 +1,31 @@
 package com.jobs.domain;
 
 public class Volunteer extends Employee {
-	//protected double salaryPerMonth;
-	//protected IPaymentRate paymentRate;	
+	protected double ajut;
+		
+	protected IPaymentRate paymentRate;	
 
-	public Volunteer(String name, String address, String phone, double salaryPerMonth,IPaymentRate paymentRate) throws Exception {
-		super(name, address, phone, salaryPerMonth, paymentRate);
-		if (salaryPerMonth > 0)
-			throw new Salary_err("El voluntari pot tenir cap sou assignat");
+	public Volunteer(String name, String address, String phone, double ajut, IPaymentRate iPaymentRate) throws Exception {
+		super(name, address, phone, ajut,iPaymentRate);
+		if (ajut > 300)
+			throw new Salary_err("El voluntari no pot tenir un ajut superior al 300 €");
+		
+		this.ajut=ajut;
 		
 	}
 
 	
 	@Override
 	public void pay() {
-			
+	
+		
+				
 	}
 	//metodo to String
 	@Override
 	public String toString() {
-		return "Volunteer [name=" + name + ", address=" + address + ", phone=" + phone +" Salary Month="+ salaryPerMonth + ", total Paid=" + totalPaid + "]" ;
+		return "Voluntari [Nom=" + name + ", Adreça=" + address + ", Telèfon=" + phone +"\n"
+				+"* Ajut governamental="+ ajut+"]"+"\n";
 	}
 	
 	
